@@ -25,3 +25,31 @@ td {
 tr:nth-child(even) {
 	@apply bg-gray-200;
 }
+
+.tarea {
+	@apply flex justify-between items-center bg-gray-500 py-5 px-10 rounded mb-3
+}
+
+.nombre-tarea {
+	@apply text-lg text-white cursor-pointer
+}
+
+.estado-tarea {
+	@apply rounded py-1 px-3 flex items-center justify-center text-white uppercase font-semibold
+}
+
+.eliminar-tarea {
+	@apply rounded bg-red-700 py-1 px-3  flex items-center justify-center text-white uppercase font-semibold
+}
+
+.pendiente {
+	@apply bg-amber-500
+}
+
+.completa {
+	@apply bg-blue-700
+}
+
+.opciones {
+	@apply flex gap-2 text-xs h-6
+}

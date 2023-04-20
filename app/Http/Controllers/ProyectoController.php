@@ -16,6 +16,7 @@ class ProyectoController extends Controller
     public function show(Proyecto $proyecto)
     {        
         $this->authorize('view', $proyecto);
+        $_GET['id'] = $proyecto->id;
 
         return view('auth.proyectos.show', [
             'proyecto' => $proyecto,
