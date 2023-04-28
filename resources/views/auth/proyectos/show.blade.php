@@ -16,9 +16,9 @@
 
             {{-- filtros --}}
             <div class="p-5 bg-gray-500 mt-4 rounded">
-                <div id="filtros" class="flex flex-col md:flex-row items-center gap-8">
+                <div id="filtros" class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
                     <h2 class="text-3xl font-bold text-white">Filtros:</h2>
-                    <div class="flex gap-2 items-center">
+                    <div class="flex justify-between md:justify-normal md:gap-2 items-center">
                         <label class="text-white text-lg" for="todas">Todas</label>
                         <input
                             type="radio" 
@@ -28,7 +28,7 @@
                             checked
                         />
                     </div>
-                    <div class="flex gap-2 items-center">
+                    <div class="flex justify-between md:justify-normal md:gap-2 items-center">
                         <label for="completadas" class="text-white text-lg">Completadas</label>
                         <input
                             type="radio"
@@ -37,7 +37,7 @@
                             value="1"
                         />
                     </div>
-                    <div class="flex gap-2 items-center">
+                    <div class="flex justify-between md:justify-normal md:gap-2 items-center">
                         <label class="text-white text-lg" for="pendientes">Pendientes</label>
                         <input 
                             type="radio" 
@@ -62,5 +62,6 @@
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="{{ asset('js/tareas.js') }}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('resources/js/tareas.js') }}"></script> --}}
+    @vite('resources/js/tareas.js')
 @endpush

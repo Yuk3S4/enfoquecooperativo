@@ -8,14 +8,14 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <header class="sticky top-0 left-0 p-2 bg-white shadow z-10 w-full">
-        <div class="container mx-auto flex items-center flex-col md:flex-row md:justify-between">
+    <header class="sticky top-0 left-0 p-2 bg-white shadow md:z-10 w-full">
+        <div class="container mx-auto flex justify-between items-center md:flex-row">
             <a href="{{ route('home') }}" class="flex items-center gap-4">
                 <img class="w-16" src="{{ asset('img/logo-Consultoria_Big.png') }}" alt="Imágen logo">
                 <p class="text-lg font-bold">EnfoqueCooperativo</p>
             </a>
             
-            <nav>
+            <nav class="hidden md:block">
                 <ul class="flex flex-col md:flex-row md:gap-4">
                     <a href="{{ route('home') }}">
                         <li class="text-sm hover:text-gray-600 font-bold">Inicio</li>
@@ -31,6 +31,20 @@
                     </a>
                 </ul>
             </nav>
+
+            <div class="md:hidden">
+                <svg 
+                    id="mobile-menu"
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke-width="1.5" 
+                    stroke="currentColor" 
+                    class="w-7 h-7 cursor-pointer"                    
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>                  
+            </div>
         </div>
     </header>
     
@@ -39,7 +53,7 @@
     </main>
 
     <footer class="bg-gray-300 p-5">
-        <div class="container mx-auto md:grid md:grid-cols-2">
+        {{-- <div class="container mx-auto md:grid md:grid-cols-2">
             <div class="flex gap-3 mb-4 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6">
                     <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
@@ -62,9 +76,52 @@
                   
                 <p class="text-sm font-bold">C. Isauro Venzor #212 Col. Centro Durango, Dgo. C.P 34000</p>  
             </div>
+        </div> --}}
+        {{-- <p class="text-center text-sm font-bold">Nuestras redes sociales:</p> --}}
+        <div class="flex items-center justify-center gap-5 mb-5">
+            <a target="blank" href="https://www.youtube.com/@MX1018100/videos">
+                <img class="w-7" src="{{ asset('img/yotube.svg') }}" alt="Logo YouTube">
+            </a>
+            <a href="#">
+                <img class="w-7" src="{{ asset('img/whatsapp.svg') }}" alt="Logo YouTube">
+            </a>
         </div>
-        <p class="text-center text-sm font-bold">2023 - EnfoqueCooperativo</p>
+        <p class="text-center text-sm font-bold">&#169; 2023 - EnfoqueCooperativo</p>
     </footer>
 
+    {{-- Menu mobile --}}
+    <div class="menu p-2">
+        <div class="flex justify-between items-center">
+            <h2 class="text-white text-2xl md:text-xl font-bold">EnfoqueCooperativo</h2>
+            <div>
+                <svg 
+                    id="cerrar-menu"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-white cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>   
+            </div>                   
+        </div>
+
+        <nav class="mt-6">
+            <ul class="flex justify-center items-center flex-col gap-4 text-center">
+                <a href="{{ route('home') }}" class="w-full hover:bg-orange-400 rounded">
+                    <li class="text-lg text-white font-semibold">Inicio</li>
+                </a>
+                <a href="{{ route('servicios') }}" class="w-full hover:bg-orange-400 rounded">
+                    <li class="text-lg text-white font-semibold">Servicios</li>
+                </a>
+                <a href="{{ route('conocenos') }}" class="w-full hover:bg-orange-400 rounded">
+                    <li class="text-lg text-white font-semibold">Conócenos</li>
+                </a>
+                <a href="{{ route('contacto') }}" class="w-full hover:bg-orange-400 rounded">
+                    <li class="text-lg text-white font-semibold">Contacto</li>
+                </a>
+            </ul>
+        </nav>
+
+    </div>
+
+    {{-- <script src="{{ asset('resources/js/main.js') }}"></script> --}}
+    @vite('resources/js/main.js')
 </body>
 </html>

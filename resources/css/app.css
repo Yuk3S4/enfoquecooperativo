@@ -26,8 +26,34 @@ tr:nth-child(even) {
 	@apply bg-gray-200;
 }
 
+/* MOBILE STYLES - DASHBOARD */
+.bg-sidebar {
+	background-color: rgb( 0 0 0 / .90);
+}
+
+.bg-main-sidebar {
+	background-color: rgba(1, 43, 93, 0.9);
+}
+
+.mostrar {
+	@apply block absolute top-0 left-0 right-0 w-full h-full bg-sidebar
+}
+
+.mostrar-main-menu {
+	@apply block absolute top-0 left-0 right-0 w-full h-full bg-main-sidebar
+}
+
+
+
+.ocultar {
+	opacity: 0;
+}
+
+
+/* TAREAS */
+
 .tarea {
-	@apply flex justify-between items-center bg-gray-500 py-5 px-10 rounded mb-3
+	@apply flex justify-between items-center bg-gray-500 py-5 px-4 md:px-8 rounded mb-3
 }
 
 .nombre-tarea {

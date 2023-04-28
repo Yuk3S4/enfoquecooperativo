@@ -15,7 +15,7 @@ class CrearServicio extends Component
     use WithFileUploads;
 
     protected $rules = [
-        'nombre' => 'required|string',
+        'nombre' => 'required|unique|string',
         'descripcion' => 'required',
         'imagen' => 'required|image|max:1024',
     ];

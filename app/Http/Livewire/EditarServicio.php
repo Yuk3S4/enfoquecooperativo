@@ -13,12 +13,6 @@ class EditarServicio extends Component
     public $descripcion;
     public $imagen;
     public $imagen_nueva;
-    
-    protected $rules = [
-        'nombre' => 'required|string',
-        'descripcion' => 'required',
-        'imagen_nueva' => 'nullable|image|max:1024',
-    ];
 
     use WithFileUploads;
 
@@ -32,7 +26,11 @@ class EditarServicio extends Component
 
     public function editarServicio()
     {
-        $datos = $this->validate();
+        $datos = $this->validate([
+            'nombre' => ['required', 'unique:servicios,nombre,' . $this->servicio_id, 'string'],
+            'descripcion' => ['required'],
+            'imagen_nueva' => ['nullable', 'image', 'max:1024'],
+        ]);
 
         // Revisar si hay una imágen nueva
         if ( $this->imagen_nueva ) {

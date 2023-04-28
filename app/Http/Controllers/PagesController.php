@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use App\Models\Servicio;
 use Illuminate\Http\Request;
 
@@ -28,5 +29,14 @@ class PagesController extends Controller
     public function contact()
     {
         return view('contact.index');
+    }
+
+    public function productos(Servicio $servicio)
+    {
+        $productos = Producto::where('servicio_id', $servicio->id)->get();
+
+        return view('productos.index', [
+            'productos' => $productos,
+        ]);
     }
 }

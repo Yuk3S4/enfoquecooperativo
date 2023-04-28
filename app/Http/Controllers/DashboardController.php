@@ -11,6 +11,11 @@ class DashboardController extends Controller
         return view('auth.dashboard.index');
     }
 
+    public function productos()
+    {
+        return view('auth.dashboard.productos');
+    }
+
     public function proyectos()
     {
         return view('auth.dashboard.proyectos');

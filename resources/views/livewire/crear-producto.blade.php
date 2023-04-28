@@ -10,10 +10,31 @@
             type="text" 
             wire:model="nombre" 
             :value="old('nombre')"
-            placeholder="Nombre del servicio"
+            placeholder="Nombre del producto"
         />
 
         @error('nombre')
+            <livewire:mostrar-alerta :message="$message">
+        @enderror
+    </div>
+
+    <div class="gap-3 justify-center items-center my-4">
+        <label 
+            for="servicio"
+            class="block text-gray-500 font-bold uppercase mb-2"
+        >Servicio al que pertenece:</label>
+        <select 
+            id="servicio"
+            wire:model="servicio" 
+            class="w-full p-1 border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+        >
+            <option>-- Seleccione --</option>
+            @foreach ($servicios as $servicio)
+                <option value="{{ $servicio->id }}">{{ $servicio->nombre }}</option>
+            @endforeach
+        </select>
+
+        @error('servicio')
             <livewire:mostrar-alerta :message="$message">
         @enderror
     </div>
@@ -26,11 +47,31 @@
         <textarea
             id="descripcion"
             wire:model="descripcion"
-            placeholder="Descripción del servicio"
+            placeholder="Descripción del producto"
+            wrap="hard"
             class="w-full border p-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm h-72"
         ></textarea>
 
         @error('descripcion')
+            <livewire:mostrar-alerta :message="$message">
+        @enderror
+    </div>
+
+    <div class="gap-3 justify-center items-center my-4">
+        <label 
+            for="video"
+            class="block text-gray-500 font-bold uppercase mb-2"
+        >Video de YouTube:</label>
+        <input 
+            id="video"
+            class="w-full p-1 border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+            type="text" 
+            wire:model="video" 
+            :value="old('video')"
+            placeholder="Enlace de video del producto"
+        />
+
+        @error('video')
             <livewire:mostrar-alerta :message="$message">
         @enderror
     </div>

@@ -11,16 +11,16 @@
                 <div class="container mx-auto">
                     <p class="text-5xl font-extrabold text-orange-500">Disminuye la inversión de tiempo</p>
                     <p class="mt-3 text-xl">Interpreta la información de alto valor, aumenta tu productividad  y disminuye el estrés del sobre trabajo.</p>
-                    <a class="block mt-6 w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('servicios') }}">Ve nuestros servicios</a>
+                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('conocenos') }}">Conocenos</a>
                 </div>
             </div>
-            <img class="lg:w-1/2" src="{{ asset('img/1.jpg') }}" alt="Imágen de tiempo">
+            <img class="lg:w-1/2" src="{{ asset('img/1.jpeg') }}" alt="Imágen de tiempo">
         </div>
     </section>
 
     <section
         <div class="flex lg:flex-row flex-col-reverse">
-            <img class="lg:w-1/2" src="{{ asset('img/2.jpg') }}" alt="Imágen de tiempo">
+            <img class="lg:w-1/2" src="{{ asset('img/2.webp') }}" alt="Imágen de tiempo">
             <div class="lg:w-1/2 bg-gray-200 p-14 justify-start">
                 <div class="container mx-auto">
                     <p class="text-5xl font-extrabold text-orange-500">Conoce nuestros servicios</p>
@@ -66,7 +66,7 @@
                             <p class="text-xl">RRHH</p>
                         </li>
                     </ul>
-                    <a class="block mt-6 w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('servicios') }}">Ve nuestros servicios</a>
+                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('servicios') }}">Ve nuestros servicios</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                 <div class="container mx-auto">
                     <p class="text-5xl font-extrabold text-orange-500">Acerca de nosotros</p>
                     <p class="mt-3 text-xl">Contamos con una amplia experiencia trabajando con empresas por el país, en coaching, gerencia y liderazgo en las organizaciones, además tenemos contactos y experiencia tratando con empresas de carácter internacional.</p>
-                    <a class="block mt-6 w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('conocenos') }}">Conócenos</a>
+                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('conocenos') }}">Conócenos</a>
                 </div>
             </div>
             <img class="lg:w-1/2" src="{{ asset('img/logo-Consultoria.svg') }}" alt="Imágen de tiempo">
