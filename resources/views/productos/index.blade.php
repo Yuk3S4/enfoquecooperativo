@@ -8,19 +8,34 @@
     @forelse ($productos as $producto)
     <section class="bg-gray-200 p-5 mb-6">
         <div class="mx-auto container flex flex-col items-center justify-center lg:flex-row gap-6">
-            <a href="{{ $producto->video }}" target="blank">
-                <img
-                    class="rounded shadow-md max-w-xl hover:shadow-md"
-                    src="{{ asset('storage/productos/' . $producto->imagen ) }}"
-                    alt="{{ 'Imágen producto ' . $producto->nombre }}"
-                />
-            </a>
+
+            @if ($producto->media)
+                <div>
+                    <iframe
+                    width="800"
+                    height="420"
+                    src="{{ $producto->video }}"
+                    title="Monitoreo de Proyecciones Financieras"
+                    class="rounded max-w-xl"
+                    {{-- frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" --}}
+                    allowfullscreen
+                    ></iframe>
+                </div>
+            @else
+                <a href="{{ $producto->video }}" target="blank">
+                    <img
+                        class="rounded shadow-md max-w-xl hover:shadow-md"
+                        src="{{ asset('storage/productos/' . $producto->imagen ) }}"
+                        alt="{{ 'Imágen producto ' . $producto->nombre }}"
+                    />
+                </a>
+            @endif
+
             <div>
-                <a
-                    href="{{ $producto->video }}"
-                    target="blank"
-                    class="text-4xl md:text-5xl font-extrabold text-orange-400 hover:text-orange-500"
-                >{{ $producto->nombre }}</a>
+                <h2
+                    class="text-4xl md:text-5xl font-extrabold text-orange-400"
+                >{{ $producto->nombre }}</h2>
                 <p class="mt-6 text-xl">{{ $producto->descripcion }}</p>
                 <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('contacto') }}">Contactanos</a>
             </div>
