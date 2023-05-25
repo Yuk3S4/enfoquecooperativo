@@ -79,3 +79,10 @@ tr:nth-child(even) {
 .opciones {
 	@apply flex gap-2 text-xs h-6
 }
+
+
+/* FOOTER */
+
+.footer {
+    border-top: 1px solid rgb(148, 148, 148);
+}

@@ -11,7 +11,7 @@
                 <div>
                     <p class="text-4xl md:text-5xl font-extrabold text-orange-500">{{ $servicio->nombre }}</p>
                     <p class="mt-6 text-xl">{{ $servicio->descripcion }}</p>
-                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('productos', $servicio->nombre) }}">Ve sus productos</a>
+                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('productos', $servicio->nombre) }}">Conoce sus productos</a>
                 </div>
                 <img
                     class="rounded shadow-md max-w-2xl"
