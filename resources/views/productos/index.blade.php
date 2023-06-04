@@ -6,33 +6,31 @@
 
 @section('content')
     @forelse ($productos as $producto)
-    <section class="bg-gray-200 p-5 mb-6">
+    <section data-aos="zoom-out" class="bg-gray-200 p-5 mb-6">
         <div class="mx-auto container flex flex-col items-center justify-center lg:flex-row gap-6">
 
             @if ($producto->media)
-                <div>
+                <div class="w-full lg:w-1/2">
                     <iframe
-                    width="800"
-                    height="420"
-                    src="{{ $producto->video }}"
-                    title="Monitoreo de Proyecciones Financieras"
-                    class="rounded max-w-xl"
-                    {{-- frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" --}}
-                    allowfullscreen
+                        src="{{ $producto->video }}"
+                        title="Monitoreo de Proyecciones Financieras"
+                        class="rounded w-full h-96"
+                        allowfullscreen
                     ></iframe>
                 </div>
             @else
-                <a href="{{ $producto->video }}" target="blank">
-                    <img
-                        class="rounded shadow-md max-w-xl hover:shadow-md"
-                        src="{{ asset('storage/productos/' . $producto->imagen ) }}"
-                        alt="{{ 'Imágen producto ' . $producto->nombre }}"
-                    />
-                </a>
+                <div class="w-full lg:w-1/2">
+                    <a href="{{ $producto->video }}" target="blank">
+                        <img
+                            class="rounded shadow-md w-full hover:shadow-md"
+                            src="{{ asset('storage/productos/' . $producto->imagen ) }}"
+                            alt="{{ 'Imágen producto ' . $producto->nombre }}"
+                        />
+                    </a>
+                </div>
             @endif
 
-            <div>
+            <div class="lg:w-1/2">
                 <h2
                     class="text-4xl md:text-5xl font-extrabold text-orange-400"
                 >{{ $producto->nombre }}</h2>

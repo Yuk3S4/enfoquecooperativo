@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section>
+    <section data-aos="fade-down">
         <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 bg-gray-200 p-14">
                 <div class="container mx-auto">
@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <section
+    <section data-aos="fade-right">
         <div class="flex lg:flex-row flex-col-reverse">
             <img class="lg:w-1/2" src="{{ asset('img/2.webp') }}" alt="Imágen de tiempo">
             <div class="lg:w-1/2 bg-gray-200 p-14 justify-start">
@@ -72,13 +72,13 @@
         </div>
     </section>
 
-    <section>
+    <section data-aos="fade-left">
         <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 bg-gray-200 p-14">
                 <div class="container mx-auto">
                     <p class="text-4xl md:text-5xl font-extrabold text-orange-500">Acerca de nosotros</p>
                     <p class="mt-3 text-xl">Contamos con amplia experiencia trabajando con diversas Sociedades Cooperativas, tanto en áreas operativas como administrativas, a niveles gerenciales y jefaturas, así como en áreas supervisoras y gestión de capital humano.</p>
-                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('conocenos') }}">Conócenos</a>
+                    <a class="inline-block w-full mt-6 lg:w-52 p-2 rounded text-center bg-blue-500 hover:bg-blue-700 text-white font-bold" href="{{ route('conocenos') }}">Conocenos</a>
                 </div>
             </div>
             <img class="lg:w-1/2" src="{{ asset('img/logo-Consultoria.svg') }}" alt="Imágen de tiempo">

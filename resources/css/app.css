@@ -40,7 +40,7 @@ tr:nth-child(even) {
 }
 
 .mostrar-main-menu {
-	@apply block absolute top-0 left-0 right-0 w-full h-full bg-main-sidebar
+	@apply block absolute top-0 left-0 right-0 w-full h-full bg-main-sidebar overflow-hidden
 }
 
 
@@ -80,9 +80,76 @@ tr:nth-child(even) {
 	@apply flex gap-2 text-xs h-6
 }
 
+/* GO TOP BUTTON */
+
+.go-top-container {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 56px;
+    height: 56px;
+    z-index: -1;
+}
+
+.go-top-button {
+    @apply bg-amber-400 hover:bg-amber-500;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+}
+
+.go-top-button svg {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: white;
+    transition: .2s;
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .go-top-button {
+    animation: popup .3s ease-in-out;
+    width: 56px;
+    height: 56px;
+    z-index: 11;
+}
+
+.show svg {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+    50% {
+        width: 80px;
+        height: 80px;
+    }
+    100% {
+        width: 56px;
+        height: 56px;
+    }
+}
+
 
 /* FOOTER */
 
 .footer {
     border-top: 1px solid rgb(148, 148, 148);
+}
+
+.bg-footer {
+    background-color: rgb(237, 237, 237);
 }

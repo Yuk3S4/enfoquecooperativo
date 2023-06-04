@@ -37,8 +37,8 @@
             const resp = await fetch(urlDest)
             const result = await resp.json()
 
-            tareas = result.data  
-            mostrarTareas()          
+            tareas = result.data
+            mostrarTareas()
         } catch (err) {
             console.log(err);
         }
@@ -98,14 +98,14 @@
             btnEliminarTarea.textContent = 'Eliminar'
             btnEliminarTarea.ondblclick = function() {
                 confirmarEliminarTarea({...tarea});
-            }       
+            }
 
             opcionesDiv.appendChild(btnEstadoTarea)
             opcionesDiv.appendChild(btnEliminarTarea)
 
             contenedorTarea.appendChild(nombreTarea)
             contenedorTarea.appendChild(opcionesDiv)
-            
+
             const listadoTareas = document.getElementById('listado-tareas')
             listadoTareas.appendChild(contenedorTarea)
         })
@@ -126,15 +126,15 @@
             if (result.isConfirmed) {
 
                 if (result.value === '') return
-                
+
                 if ( editar ) {
                     tarea = { ...tarea, nombre: result.value }
-                    actualizarTarea({...tarea})                
+                    actualizarTarea({...tarea})
                 } else {
                     agregarTarea( result.value )
                 }
             }
-        })      
+        })
     }
 
     async function agregarTarea(nombreTarea) {
@@ -142,11 +142,11 @@
         const data = {
             nombre: nombreTarea,
             url: getProyectoUrl()
-        }  
+        }
 
         try {
 
-            const resp = await fetch(`http://localhost:8000/api/tareas`, {
+            const resp = await fetch(`https://enfoquecooperativo.com/api/tareas`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -186,7 +186,7 @@
     }
 
     async function actualizarTarea(tarea) {
-        const { id, estado, nombre } = tarea;        
+        const { id, estado, nombre } = tarea;
 
         const data = {
             nombre,
@@ -194,7 +194,7 @@
         }
 
         try {
-            const respuesta = await fetch(`http://localhost:8000/api/tareas/${ id }`, {
+            const respuesta = await fetch(`https://enfoquecooperativo.com/api/tareas/${ id }`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json",
@@ -203,7 +203,7 @@
                 body: JSON.stringify(data)
             });
             const resultado = await respuesta.json()
-            
+
             if ( resultado.tarea ) {
                 Swal.fire(
                     'Se actualizó la tarea',
@@ -245,8 +245,8 @@
         const { id } = tarea
 
         try {
-            
-            await fetch(`http://localhost:8000/api/tareas/${ id }`, {
+
+            await fetch(`https://enfoquecooperativo.com/api/tareas/${ id }`, {
                 method: 'DELETE'
             })
 
@@ -266,14 +266,14 @@
 
     function getProyectoUrl() {
         let url = window.location.pathname
-        const cadena = url.split('/')    
+        const cadena = url.split('/')
         url = cadena[ cadena.length - 1 ]
         return url
     }
 
     function limpiarTareas() {
         const lisadoTareas = document.getElementById('listado-tareas');
-        
+
         while(lisadoTareas.firstChild) {
             lisadoTareas.removeChild(lisadoTareas.firstChild);
         }

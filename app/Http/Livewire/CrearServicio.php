@@ -15,7 +15,7 @@ class CrearServicio extends Component
     use WithFileUploads;
 
     protected $rules = [
-        'nombre' => 'required|unique|string',
+        'nombre' => 'required|unique:servicios|string',
         'descripcion' => 'required',
         'imagen' => 'required|image|max:1024',
     ];
@@ -27,7 +27,7 @@ class CrearServicio extends Component
         // Almacenar la imagen
         // en storage/app/public/servicios
         $imagen = $this->imagen->store('public/servicios');
-        $datos['imagen'] = str_replace('public/servicios', '', $imagen);
+        $datos['imagen'] = str_replace('public/servicios/', '', $imagen);
 
         // Crear el sevicio
         Servicio::create([

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EnfoqueCooperativo | Administración</title>
 
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-e85e35ab.css') }}"> --}}
     @vite('resources/css/app.css')
 </head>
 <body>
@@ -17,12 +18,12 @@
                 <div class="flex justify-between items-center">
                     <h2 class="text-white text-3xl md:text-xl mt-2 font-bold">EnfoqueCooperativo</h2>
                     <div class="md:hidden">
-                        <svg 
+                        <svg
                             id="cerrar-menu"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white cursor-pointer">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>   
-                    </div>                   
+                        </svg>
+                    </div>
                 </div>
 
                 <nav class="flex flex-col items-center text-center mt-6 list-none w-full">
@@ -61,12 +62,12 @@
             <div class="md:hidden flex bg-gray-700 py-4 px-7 justify-between items-center text-white">
                 <h1 class="text-3xl font-bold">EnfoqueCooperativo</h1>
                 <div>
-                    <img 
+                    <img
                         id="mobile-menu"
                         class="w-2 cursor-pointer"
-                        src="{{ asset('img/menu.svg') }}" 
+                        src="{{ asset('img/menu.svg') }}"
                         alt="Menu mobile"
-                    />                     
+                    />
                 </div>
             </div>
 
@@ -80,9 +81,9 @@
 
     @livewireScripts
     {{-- @stack('scripts') - Para agregar scripts personalizados --}}
-    @stack('scripts') 
+    @stack('scripts')
 
-    {{-- <script src="{{ asset('resources/js/app.js') }}"></script> --}}
+    {{-- <script src="{{ asset('build/assets/app-7731489c.js') }}"></script> --}}
     @vite('resources/js/app.js')
 </body>
 </html>

@@ -32,7 +32,7 @@ class CrearProducto extends Component
         // Almacenar la imagen
         // en storage/app/public/storage/productos
         $imagen = $this->imagen->store('public/productos');
-        $datos['imagen'] = str_replace('public/productos', '', $imagen);
+        $datos['imagen'] = str_replace('public/productos/', '', $imagen);
 
         if (!$datos['video']) {
             $datos['video'] = 'https://www.youtube.com/@MX1018100/videos';

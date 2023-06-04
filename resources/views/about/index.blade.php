@@ -5,15 +5,17 @@
 @endsection
 
 @section('content')
-    <section class="w-full bg-blue-800 p-14">
+    <section data-aos="zoom-in-down" class="w-full bg-blue-800 p-14">
         <div class="flex flex-col items-center justify-center container mx-auto text-center text-white">
             <h1 class="text-4xl font-bold mb-6">¿Quiénes somos?</h1>
-            <p class="text-lg">Contamos con certificaciones en: Coaching Ejecutivo y Ontológico, Liderazgo Empresarial, Formación de Capital Humano, Planeación y diseño de Cursos, con un amplio historial y experiencia como ejecutivos de cuenta, gerencia de sucursal, ejecutivos de empresa y de gobierno, así como ejecutivos de cobranzas y gerentes de cobranzas</p>
+            <p class="text-lg">Contamos con variadas Certificaciones:
+                Coaching Ejecutivo y Ontológico; Formación y  desarrollo del Capital Humano; Planeación y Diseño de Planes de Capacitación. Hemos recorrido diferentes puestos del Sector Financiero: Operador de Ventanilla, Ejecutivo de Cuenta Comercial, Gerencia de Sucursal, Ejecutivo de Empresas y Gobierno, Coordinación y Gerencia de Cobranza.
+                Gerencia General de una SOCAP.</p>
             <a class="block w-full mt-6 md:w-auto p-3 rounded text-center bg-white border-none text-blue-600 hover:bg-orange-500 hover:text-white font-bold" href="{{ route('servicios') }}">Conoce nuestros servicios</a>
         </div>
     </section>
 
-    <section>
+    <section data-aos="zoom-in-down">
         <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 bg-gray-200 p-14">
                 <div class="container mx-auto">
@@ -25,7 +27,7 @@
         </div>
     </section>
 
-    <section>
+    <section data-aos="fade-right">
         <div class="flex lg:flex-row flex-col-reverse">
             <img class="lg:w-1/2" src="{{ asset('img/5.jpg') }}" alt="Nuestra Misión">
             <div class="lg:w-1/2 bg-gray-200 p-14">
@@ -37,7 +39,7 @@
         </div>
     </section>
 
-    <section>
+    <section data-aos="fade-left">
         <div class="flex flex-col lg:flex-row">
             <div class="lg:w-1/2 bg-gray-200 p-14">
                 <div class="container mx-auto">
@@ -49,7 +51,7 @@
         </div>
     </section>
 
-    <section class="">
+    <section data-aos="fade-right">
         <div class="flex lg:flex-row flex-col-reverse">
             <img class="lg:w-1/2" src="{{ asset('img/3.jpeg') }}" alt="Nuestra Filosofía">
             <div class="lg:w-1/2 bg-gray-200 p-14">

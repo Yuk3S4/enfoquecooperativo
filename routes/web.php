@@ -29,6 +29,19 @@ Route::get('/contacto', [PagesController::class, 'contact'])->name('contacto');
 Route::post('/contacto', [EmailController::class, 'enviarEmail'])->name('enviar-correo');
 Route::get('/ec-admin', [ LoginController::class, 'index' ])->name('login');
 
+// Ruta para crear link simbólico en cPanel
+Route::get('storage-link', function() {
+    if (file_exists('public_html/storage')) {
+        return 'The "public_html/storage" directory already exists.';
+    }
+    $url = '../storage/app/public';
+    $enlace = 'storage';
+    symlink($url, $enlace);
+
+    // return 'The [public_html/storage] directory has been linked';
+    echo readlink($enlace);
+});
+
 
 
 /* ZONA ADMINISTRATIVA - bajo middleware de Authenticate */

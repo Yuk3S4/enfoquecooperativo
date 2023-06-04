@@ -16,3 +16,13 @@
 ```php artisan serve```
 6. En otra terminal e igualmente dentro del proyecto ejecutar
 ```yarn dev```
+
+## Configuraciones de dev y prod
+* Modo desarrollo
+- Descomentar los enlaces a archivos css y js de @vite()
+- Comentar los enlaces mediante link y script
+
+* Modo producción
+- Comentar los enlaces a archivos css y js de @vite()
+- Ejecutar ```yarn build```
+- Descomentar los enlaces mediante link y script

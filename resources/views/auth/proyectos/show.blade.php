@@ -21,9 +21,9 @@
                     <div class="flex justify-between md:justify-normal md:gap-2 items-center">
                         <label class="text-white text-lg" for="todas">Todas</label>
                         <input
-                            type="radio" 
-                            id="todas" 
-                            name="filtro" 
+                            type="radio"
+                            id="todas"
+                            name="filtro"
                             value=""
                             checked
                         />
@@ -39,20 +39,20 @@
                     </div>
                     <div class="flex justify-between md:justify-normal md:gap-2 items-center">
                         <label class="text-white text-lg" for="pendientes">Pendientes</label>
-                        <input 
-                            type="radio" 
+                        <input
+                            type="radio"
                             id="pendientes"
                             name="filtro"
-                            value="0" 
+                            value="0"
                         />
                     </div>
                 </div>
             </div>
 
             <ul id="listado-tareas" class="mt-4">
-                
-            </ul>        
-            
+
+            </ul>
+
             {{-- <div class="mt-6">
                 <livewire:mostrar-tareas :proyecto="$proyecto" />
             </div> --}}
@@ -62,6 +62,6 @@
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- <script type="text/javascript" src="{{ asset('resources/js/tareas.js') }}"></script> --}}
+    {{-- <script src="{{ asset('build/assets/tareas-e7debe9d.js') }}"></script> --}}
     @vite('resources/js/tareas.js')
 @endpush

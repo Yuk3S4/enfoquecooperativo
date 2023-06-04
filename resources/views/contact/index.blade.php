@@ -6,7 +6,7 @@
 
 @section('content')
     <section class="mb-32 bg-gray-200 p-10">
-        <div class="container mx-auto flex flex-col lg:flex-row justify-center gap-8">
+        <div data-aos="fade-right" class="container mx-auto flex flex-col lg:flex-row justify-center gap-8">
             <div class="lg:w-2/3">
                 @if (session()->has('mensaje'))
                     <div class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold p-2 my-3 text-sm">
@@ -89,6 +89,7 @@
             </div>
 
             <img
+                data-aos="fade-up-right"
                 src="{{ asset('img/8.jpg') }}"
                 alt="Imágen de contacto"
                 class="lg:w-1/3 rounded shadow"
